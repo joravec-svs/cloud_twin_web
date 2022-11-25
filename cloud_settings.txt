@@ -1,0 +1,15 @@
+#Development 
+
+# connect to sql proxy
+# https://cloud.google.com/sql/docs/mysql/connect-admin-proxy#connect-tcp
+CMD
+cd cloud_sql_proxy_folder
+cloud_sql_proxy -instances=INSTANCE_CONNECTION_NAME=tcp:0.0.0.0:1234
+
+#Production
+
+# https://cloud.google.com/sql/docs/mysql/connect-instance-cloud-run
+# CloudRun -> Create service
+gcloud auth application-default login
+gcloud projects list
+gcloud config set project your_project-id

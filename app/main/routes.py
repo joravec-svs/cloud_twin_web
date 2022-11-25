@@ -7,7 +7,7 @@ from flask_login import current_user
 from flask_login import login_required
 
 from app import db
-from app.models import Data, User, VirtualData, InputData
+from app.models import SensorData,VirtualData,InputData,User
 from app.main.forms import EditProfileForm
 from app.main import bp
 
@@ -25,16 +25,16 @@ def index():
 @bp.route('/data', methods=["GET", "POST"])
 @login_required
 def data():
-    datas = Data.query
+    datas = SensorData.query
     return render_template('data_table.html', title='Data Table',
-                           datas=data)
+                           datas=datas)
 
 @bp.route('/simulationdata', methods=["GET", "POST"])
 @login_required
 def simulationdata():
     datas = VirtualData.query
     return render_template('fmu_table.html', title='Digital twin data table',
-                           datas=data)
+                           datas=datas)
 
 @bp.route('/user/<username>')
 @login_required
