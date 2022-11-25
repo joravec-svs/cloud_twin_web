@@ -1,5 +1,5 @@
 from flask import Flask
-from config import Config
+from config import ProdConfig,DevConfig
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_bootstrap import Bootstrap
@@ -13,7 +13,7 @@ login.login_view = 'auth.login'
 bootstrap = Bootstrap()
 admin = Admin()
 
-def create_app(config_class=Config):
+def create_app(config_class=DevConfig):
     app = Flask(__name__)
     app.config.from_object(config_class)
     
