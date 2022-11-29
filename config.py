@@ -12,7 +12,7 @@ class ProdConfig(Config):
     TESTING = False
     INSTANCE_NAME = os.environ.get('INSTANCE_NAME')
     PROJECT_ID = os.environ.get('PROJECT_ID')
-    DB_PASS = os.environ.get('PASSWORD')
+    DB_PASS = os.environ.get('DB_PASS')
     DB_USER = os.environ.get('DB_USER')
     DBNAME = os.environ.get('DBNAME')
     SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{DB_USER}:{DB_PASS}@/{DBNAME}?unix_socket=/cloudsql/{PROJECT_ID}:{INSTANCE_NAME}"
