@@ -13,7 +13,7 @@ login.login_view = 'auth.login'
 bootstrap = Bootstrap()
 admin = Admin()
 
-def create_app(config_class=DevConfig):
+def create_app(config_class=ProdConfig):
     app = Flask(__name__)
     app.config.from_object(config_class)
     
